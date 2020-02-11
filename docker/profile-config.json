@@ -1,0 +1,18 @@
+{
+  "name" : "test",
+  "sourceSong" : {
+    "serverUrl" : "http://localhost:8080",
+    "accessToken" : "f69b726d-d40f-4261-b105-1ec7e6bf04d5"
+  },
+  "targetSong" : {
+    "serverUrl" : "http://localhost:9080",
+    "accessToken" : "f69b726d-d40f-4261-b105-1ec7e6bf04d5",
+    "db" : {
+      "dbname" : "song",
+      "hostname" : "localhost",
+      "port" : "9432",
+      "username" : "postgres",
+      "password" : "password"
+    }
+  }
+}

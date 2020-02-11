@@ -1,0 +1,22 @@
+{
+	"profiles" : [ 
+		{
+			"name" : "test",
+			"sourceSong" : {
+				"serverUrl" : "http://song-server:8080",
+				"accessToken" : "f69b726d-d40f-4261-b105-1ec7e6bf04d5"
+			},
+			"targetSong" : {
+				"serverUrl" : "http://intermediate-song-server:8080",
+				"accessToken" : "f69b726d-d40f-4261-b105-1ec7e6bf04d5",
+				"db" : {
+					"dbname" : "song",
+					"hostname" : "intermediate-song-db",
+					"port" : "5432",
+					"username" : "postgres",
+					"password" : "password"
+				}
+			}
+		}
+	]
+}
