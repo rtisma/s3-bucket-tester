@@ -21,14 +21,14 @@ public class ConfigSetS3Command implements Callable<Integer> {
 
   @Option(
       names = {"-a", "--access-key"},
-      interactive = true,
+      interactive = false,
       description = "Set the access key for s3",
       required = false)
   private String accessKey;
 
   @Option(
       names = {"-s", "--secret-key"},
-      interactive = true,
+      interactive = false,
       description = "Set the secret key for s3",
       required = false)
   private String secretKey;

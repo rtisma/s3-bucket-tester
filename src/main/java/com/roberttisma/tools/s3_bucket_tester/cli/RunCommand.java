@@ -1,9 +1,9 @@
 package com.roberttisma.tools.s3_bucket_tester.cli;
 
+import static com.roberttisma.tools.s3_bucket_tester.Factory.buildProcessService;
 import static com.roberttisma.tools.s3_bucket_tester.util.ProfileManager.findProfile;
 import static java.lang.String.format;
 
-import com.roberttisma.tools.s3_bucket_tester.service.ProcessService;
 import java.util.concurrent.Callable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,12 +32,25 @@ public class RunCommand implements Callable<Integer> {
       required = false)
   private int numThreads;
 
+  @Option(
+      names = {"-n", "--num-objects"},
+      description = "Number of objects to upload",
+      required = true)
+  private int numObjects;
+
+  @Option(
+      names = {"-m", "--monitor-period"},
+      description = "Log the performance every <m> requests. Default: ${DEFAULT-VALUE} ",
+      defaultValue = "1000",
+      required = false)
+  private int monitorPeriod;
+
   @Override
   public Integer call() throws Exception {
     val result = findProfile(profileName);
     if (result.isPresent()) {
       val profileConfig = result.get();
-      ProcessService.builder().profileConfig(profileConfig).numThreads(numThreads).build().run();
+      buildProcessService(profileConfig, numObjects, numThreads, monitorPeriod).run();
     } else {
       val errorMessage = format("The profile '%s does not exist'", profileName);
       log.error(errorMessage);

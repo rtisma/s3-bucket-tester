@@ -20,6 +20,16 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>${aws-java-sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
         <!--Postgres-->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -255,6 +265,7 @@
         <unirest.version>3.1.00</unirest.version>
         <jackson.version>2.10.0</jackson.version>
 		<jdbi.version>3.12.0</jdbi.version>
+        <aws-java-sdk.version>1.11.219</aws-java-sdk.version>
 
         <!--  Plugins-->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
