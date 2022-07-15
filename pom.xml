@@ -265,7 +265,7 @@
         <unirest.version>3.1.00</unirest.version>
         <jackson.version>2.10.0</jackson.version>
 		<jdbi.version>3.12.0</jdbi.version>
-        <aws-java-sdk.version>1.11.219</aws-java-sdk.version>
+        <aws-java-sdk.version>1.12.261</aws-java-sdk.version>
 
         <!--  Plugins-->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
